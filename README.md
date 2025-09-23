@@ -2,7 +2,7 @@
 A Users API, using SQLAlchemy, FastAPI and SQLite
 
 # Installation
-Make sure you have [UV](https://docs.astral.sh/uv/) installed on your machine. Then, in a terminal, move to an empty directory and run `uv build`. 
+Make sure you have [UV](https://docs.astral.sh/uv/) installed on your machine. Then, clone this repo to your system and run `uv run` in your terminal.  
 
 # Running the application.
 To run the application, run `uv run fastapi dev main.py`. You can then open the docs in the link provided to test out the API's endpoints. 
