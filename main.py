@@ -1,7 +1,7 @@
 import os
 from fastapi import FastAPI, HTTPException, Depends, Security
 from fastapi.security import APIKeyHeader
-from pydantic import BaseModel, Field, conlist
+from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 from dotenv import load_dotenv
 from sqlalchemy.exc import IntegrityError
@@ -40,7 +40,7 @@ class User(BaseModel):
     user_email: str = Field(min_length=1)
     age: int = Field(gt=1, lt=2**31 - 1) # 32 bit integer limit
     recommendations: list[str] = Field(min_length=1)
-    zip: str = Field(min_length=5, max_length=5) # In Mexico zip codes are, at most, 5 digits long.
+    zip: str = Field(min_length=1) 
 
 # === Endpoints === #
 @app.get('/')
